@@ -8,12 +8,13 @@ Sidebar = function(){
   
   var input = document.createElement('input');
   input.id = 'sidebar-input';
+  input.setAttribute('type','search')
   
   controls.appendChild(input);
   this.element.appendChild(controls);
   
-  var accordion = new Accordion();
-  this.element.appendChild(accordion.element);
+  this.accordion = new Accordion();
+  this.element.appendChild(this.accordion.element);
   
   return this;
 };
@@ -31,7 +32,7 @@ Sidebar.prototype.destroy = function(){
 };
 
 Sidebar.prototype.import = function(object){
-  
+  this.accordion.import(object);
 };
 
 Sidebar.prototype.export = function(){

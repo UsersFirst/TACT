@@ -6,30 +6,14 @@ Accordion = function(){
 
 Accordion.prototype.import = function(object){
   for ( var key in object ){
-    var item = document.createElement('li');
-    item.className = 'accordion-navigation';
-    
-    var title = document.createElement('a');
-    title.textContent = key;
-    item.appendChild(title);
-    
-    
-    var content = document.createElement('div');
-    content.className = 'content active';
-    
-    if ( typeof object[key] == 'string' ){
-      content.textContent = object[key];
-    } else {
-      
-    }
-    item.appendChild(content);
-    this.element.appendChild(item);
+    var panel = this.panel(key,object[key]);
+    this.element.appendChild(panel);
   }
-  
+  console.log('successfully imported to accordion!');
 };
 
 
-Accordion.prototype.panel = function(title,content){
+Accordion.prototype.panel = function(key,value){
     
     var item = document.createElement('li');
     item.className = 'accordion-navigation';
@@ -37,15 +21,23 @@ Accordion.prototype.panel = function(title,content){
     var a = document.createElement('a');
     a.textContent = key;
     item.appendChild(a);
+
+    if (!value) return item;
     
     var div = document.createElement('div');
     div.className = 'content';
-    
-    if ( typeof object[key] == 'string' ){
-      content.textContent = object[key];
-    } else {
-      
+    item.appendChild(div);
+     
+    if ( typeof value == 'string' ){
+      div.textContent = value;
+    } else if ( typeof value == 'object' ){
+      for ( var k in value){
+        var panel = this.panel(k,value[k])
+        div.appendChild(panel);  
+      }
     }
+
+    return item
   
   
   
