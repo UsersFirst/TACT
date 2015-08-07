@@ -12,6 +12,9 @@ Accordion.prototype.import = function(object){
   console.log('successfully imported to accordion!');
 };
 
+Accordion.prototype.export = function(){
+
+}
 
 Accordion.prototype.panel = function(key,value){
     var item = document.createElement('li');
@@ -22,12 +25,17 @@ Accordion.prototype.panel = function(key,value){
     a.onclick = function(event){
       var parent = event.target.parentNode.parentNode;
       var content = event.target.parentNode.querySelector('.content');
-      var contentIsActive = $(content).hasClass('active')
+      var contentIsActive = $(content).hasClass('active');
       $(parent).find('.content').removeClass('active');
       if (contentIsActive){
-        $(content).removeClass('active');
+        $(content).slideUp(400,function(){
+          $(content).removeClass('active');  
+        })
+        
       } else {
-        $(content).addClass('active');
+        $(content).slideDown(400,function(){
+          $(content).addClass('active');  
+        })
       }
     }
     if (!value) return item;
