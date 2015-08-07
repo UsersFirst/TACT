@@ -1,6 +1,7 @@
 <html>
 <head>
-    <script src="/js/doc-builder.js"></script>
+    <script src="../js/doc-builder.js"></script>
+    <script src="../js/sidebar.js"></script>
     <link rel="stylesheet" href="../css/doc-builder.css">
     <link rel="stylesheet" href="../foundation/css/foundation.css">
     <link rel="stylesheet" href="../foundation/foundation-icons/foundation-icons.css">
@@ -22,41 +23,41 @@
         </ul>
         </section>
     </nav>
-    <div class="large-3 medium-3 columns">
-        <div class="sidebar">
-            <!--<h5>Search Documentation</h5>-->
-            <form>
-                <input tabindex="1" type="search" placeholder="Search Documentation">
-            </form>
-            <ul class="accordion" data-accordion>
-                <li class="accordion-navigation">
-                    <a href="#panel1a">Feature 1</a>
-                    <div id="panel1a" class="content active">
-                        Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
-                </li>
-                <li class="accordion-navigation">
-                    <a href="#panel2a">Accordion 2</a>
-                    <div id="panel2a" class="content">
-                        Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
-                </li>
-                <li class="accordion-navigation">
-                    <a href="#panel3a">Accordion 3</a>
-                    <div id="panel3a" class="content">
-                        Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+    
+      <div class="sidebar large-3 medium-3 columns">
+          <ul class="filter-controls">
+            <input tabindex="1" type="search" placeholder="Filter assets...">
+          </ul>
+          <ul class="accordion" data-accordion>
+              <li class="accordion-navigation">
+                  <a>Feature</a>
+                  <div id="panel1a" class="content active">
+                      Adding a feature will add a large area prebuilt with scenario placeholders.
+                  </div>
+              </li>
+              <li class="accordion-navigation">
+                  <a href="#panel2a">Scenario</a>
+                  <div id="panel2a" class="content">
+                      Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </div>
+              </li>
+              <li class="accordion-navigation">
+                  <a href="#panel3a">Step</a>
+                  <div id="panel3a" class="content">
+                      Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </div>
+              </li>
+          </ul>
+      </div>
+    
     <div class="row">
         <div class="large-9 columns">
 
         </div>
 
     </div>
-    <script src="/foundation/js/vendor/jquery.js"></script>
-    <script src="/foundation/js/foundation.min.js"></script>
+    <script src="../foundation/js/vendor/jquery.js"></script>
+    <script src="../foundation/js/foundation.min.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
