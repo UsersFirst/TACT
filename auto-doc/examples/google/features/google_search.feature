@@ -1,6 +1,15 @@
 Feature: Google Search
 
 
+
+
+
+
+
+
+
+
+
   @auto_doc
   Scenario: I can search google
     Given I visit "https://www.google.com"
