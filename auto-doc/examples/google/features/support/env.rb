@@ -1,6 +1,5 @@
 require 'selenium-webdriver'
 require 'cucumber'
-require '../../rb/doc_hooks.rb'
 
 # This would be used throughout the test statck
 $driver = Selenium::WebDriver.for :chrome

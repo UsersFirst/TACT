@@ -3,6 +3,7 @@ require 'cucumber_analytics'
 class World
   
   def initialize(directory)
+    @root = directory
     @directory = CucumberAnalytics::Directory.new(directory)
     @world = CucumberAnalytics::World
   end
@@ -38,9 +39,9 @@ class World
   
   def steps_in(scenario)
     object = {}
-    scenario.steps.each do |step|
-      puts step.methods
-      object[step.base] = nil
+    scenario_name = scenario.name.downcase.gsub(' ','_')
+    scenario.steps.each_with_index do |step,index|
+      object[step.base] = "./#{@root}/screenshots/#{scenario_name}/#{index.to_s}.png"
     end
     object
   end

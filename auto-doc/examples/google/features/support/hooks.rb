@@ -21,4 +21,4 @@ at_exit do |scenario|
 end
 
 
-load '../../rb/doc_hooks.rb'
+load '../../lib/doc_hooks.rb'

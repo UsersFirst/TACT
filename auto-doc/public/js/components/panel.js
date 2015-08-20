@@ -6,16 +6,23 @@ Panel = function(key,value){
 	head.className = 'panel-heading'
 	body.className = 'panel-body hidden'
 	head.textContent = key
-	if (value && typeof value == 'object'){
+	if (value){
 		head.onclick = function(event){
 			$(event.target.nextSibling).toggleClass('hidden')
 		}
+	}
+	if (value && typeof value == 'object'){
 		for (var k in value){
 			var p = new Panel(k,value[k])
 			body.appendChild(p)
 		}
 	} else {
-		body.textContent = value
+		var a = document.createElement('a');
+		var img = document.createElement('img');
+		a.className = 'thumbnail'
+		img.src = value;
+		a.appendChild(img);
+		body.appendChild(a);
 	}
 	panel.appendChild(head)
 	panel.appendChild(body)
